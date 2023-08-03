@@ -1,1 +1,3 @@
-export const nothing = null
+import { pullPattern } from './utils/pullPattern';
+
+export { pullPattern };
