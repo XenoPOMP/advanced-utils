@@ -1,7 +1,7 @@
 {
   "name": "@xenopomp/advanced-utils",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "author": "XenoPOMP",
   "license": "MIT",
@@ -37,8 +37,8 @@
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
-    "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish",
+    "prepublishOnly": "yarn build",
+    "release": "npm publish --access=public",
     "start": "esno src/index.ts",
     "typecheck": "tsc --noEmit"
   },
