@@ -36,9 +36,7 @@
     "*": {
       "*": [
         "./dist/*",
-        "./dist/index.d.ts",
-        "./dist/typeChecks.d.ts",
-        "./dist/mathUtils.d.ts"
+        "./dist/index.d.ts"
       ]
     }
   },
