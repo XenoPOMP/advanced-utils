@@ -1,8 +1,8 @@
 {
   "name": "@xenopomp/advanced-utils",
   "type": "module",
-  "version": "0.1.2",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Library of helpful utility functions.",
   "author": "XenoPOMP",
   "license": "MIT",
   "repository": {
