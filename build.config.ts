@@ -8,6 +8,12 @@ export default defineBuildConfig({
       name: 'typeChecks',
       declaration: true,
     },
+
+    {
+      input: 'src/math-utils/index',
+      name: 'mathUtils',
+      declaration: true,
+    },
   ],
   declaration: true,
   clean: true,

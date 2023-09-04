@@ -1,7 +1,7 @@
 {
   "name": "@xenopomp/advanced-utils",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Library of helpful utility functions.",
   "author": "XenoPOMP",
   "license": "MIT",
@@ -23,6 +23,12 @@
       "types": "./dist/typeChecks.d.ts",
       "require": "./dist/typeChecks.cjs",
       "import": "./dist/typeChecks.mjs"
+    },
+
+    "./mathUtils": {
+      "types": "./dist/mathUtils.d.ts",
+      "require": "./dist/mathUtils.cjs",
+      "import": "./dist/mathUtils.mjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -46,7 +52,8 @@
     "prepublishOnly": "yarn build",
     "release": "npm publish --access=public",
     "start": "esno src/index.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "yarn build && node dist/mathUtils.cjs"
   },
   "devDependencies": {
     "@ririd/eslint-config": "^0.6.0",
