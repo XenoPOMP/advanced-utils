@@ -1,28 +1,27 @@
 import { BuildEntry, defineBuildConfig } from 'unbuild';
 
+import { toCamelCase } from './src/string';
+
 const rollupEntry = (entryDir: string): BuildEntry => {
   const getName = (): string => {
-    if (/\-/gi.test(entryDir)) {
-      const splittedDirName = entryDir.split(/\-/gi);
-
-      return splittedDirName[0].concat(
-        splittedDirName[1].charAt(0).toUpperCase() + splittedDirName[1].slice(1)
-      );
-    }
-
-    return entryDir;
+    return toCamelCase(entryDir);
   };
 
   return {
     input: `src/${entryDir}/index`,
-    name: `${getName()}/index`,
+    name: `${getName()}`,
     declaration: false,
-    outDir: `dist/${getName()}`,
+    // outDir: `dist/${getName()}`,
   };
 };
 
 export default defineBuildConfig({
-  entries: ['src/index', rollupEntry('type-checks'), rollupEntry('math-utils')],
+  entries: [
+    'src/index',
+    rollupEntry('type-checks'),
+    rollupEntry('math-utils'),
+    rollupEntry('string'),
+  ],
   declaration: true,
   clean: true,
   rollup: {
