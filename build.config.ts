@@ -1,20 +1,28 @@
-import { defineBuildConfig } from 'unbuild';
+import { BuildEntry, defineBuildConfig } from 'unbuild';
+
+const rollupEntry = (entryDir: string): BuildEntry => {
+  const getName = (): string => {
+    if (/\-/gi.test(entryDir)) {
+      const splittedDirName = entryDir.split(/\-/gi);
+
+      return splittedDirName[0].concat(
+        splittedDirName[1].charAt(0).toUpperCase() + splittedDirName[1].slice(1)
+      );
+    }
+
+    return entryDir;
+  };
+
+  return {
+    input: `src/${entryDir}/index`,
+    name: `${getName()}/index`,
+    declaration: false,
+    outDir: `dist/${getName()}`,
+  };
+};
 
 export default defineBuildConfig({
-  entries: [
-    'src/index',
-    {
-      input: 'src/type-checks/index',
-      name: 'typeChecks',
-      declaration: false,
-    },
-
-    {
-      input: 'src/math-utils/index',
-      name: 'mathUtils',
-      declaration: false,
-    },
-  ],
+  entries: ['src/index', rollupEntry('type-checks'), rollupEntry('math-utils')],
   declaration: true,
   clean: true,
   rollup: {
