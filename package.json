@@ -9,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/XenoPOMP/advanced-utils.git"
   },
+  "private": false,
   "keywords": [],
   "sideEffects": false,
   "exports": {
