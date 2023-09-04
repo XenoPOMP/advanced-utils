@@ -6,13 +6,13 @@ export default defineBuildConfig({
     {
       input: 'src/type-checks/index',
       name: 'typeChecks',
-      declaration: true,
+      declaration: false,
     },
 
     {
       input: 'src/math-utils/index',
       name: 'mathUtils',
-      declaration: true,
+      declaration: false,
     },
   ],
   declaration: true,
