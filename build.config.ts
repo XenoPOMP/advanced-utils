@@ -18,9 +18,9 @@ const rollupEntry = (entryDir: string): BuildEntry => {
 export default defineBuildConfig({
   entries: [
     'src/index',
-    // rollupEntry('type-checks'),
-    // rollupEntry('math-utils'),
-    // rollupEntry('string'),
+    rollupEntry('type-checks'),
+    rollupEntry('math-utils'),
+    rollupEntry('string'),
   ],
   declaration: true,
   clean: true,
