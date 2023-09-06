@@ -1,7 +1,7 @@
 {
   "name": "@xenopomp/advanced-utils",
   "type": "module",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Library of helpful utility functions.",
   "author": "XenoPOMP",
   "license": "MIT",
@@ -17,21 +17,6 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
-    },
-    "./typeChecks": {
-      "types": "./dist/typeChecks.d.ts",
-      "require": "./dist/typeChecks.cjs",
-      "import": "./dist/typeChecks.mjs"
-    },
-    "./mathUtils": {
-      "types": "./dist/mathUtils.d.ts",
-      "require": "./dist/mathUtils.cjs",
-      "import": "./dist/mathUtils.mjs"
-    },
-    "./string": {
-      "types": "./dist/string.d.ts",
-      "require": "./dist/string.cjs",
-      "import": "./dist/string.mjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -41,10 +26,7 @@
     "*": {
       "*": [
         "./dist/*",
-        "./dist/index.d.ts",
-        "./dist/typeChecks.d.ts",
-        "./dist/mathUtils.d.ts",
-        "./dist/string.d.ts"
+        "./dist/index.d.ts"
       ]
     }
   },
