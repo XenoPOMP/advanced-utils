@@ -11,7 +11,9 @@ import { isUndefined } from '../type-checks';
  */
 export const roundNumber = (num: number, precision: number = 0) => {
   let multipliedNum = num * Math.pow(10, precision);
-  const nextDigit = parseInt(multipliedNum.toString().split(/\./gi)[1][0] ?? 0);
+  const nextDigit = parseInt(
+    multipliedNum.toString().split(/\./gi).at(1)?.at(0) ?? '0'
+  );
 
   if (nextDigit >= 5) {
     multipliedNum++;
