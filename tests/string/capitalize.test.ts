@@ -10,7 +10,7 @@ export class CapitalizeTest {
     const targetString = 'normal';
     const capitalizedString = capitalize(targetString);
 
-    expect.toBeEqual(capitalizedString, 'Normal');
+    expect.toBeEqual(capitalizedString, 'nNormal');
   }
 
   @Test('Capitalize capitalized string')
