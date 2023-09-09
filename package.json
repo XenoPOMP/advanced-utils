@@ -1,7 +1,7 @@
 {
   "name": "@xenopomp/advanced-utils",
   "type": "module",
-  "version": "1.1.11",
+  "version": "1.2.0",
   "description": "Library of helpful utility functions.",
   "author": "XenoPOMP",
   "license": "MIT",
@@ -41,7 +41,7 @@
     "release": "npm publish --access=public",
     "start": "esno src/index.ts",
     "typecheck": "tsc --noEmit",
-    "test": "yarn build && node dist/index.cjs"
+    "test": "testyts"
   },
   "devDependencies": {
     "@ririd/eslint-config": "^0.6.0",
@@ -54,6 +54,7 @@
     "rimraf": "5.0.1",
     "shx": "^0.3.4",
     "simple-git-hooks": "^2.8.1",
+    "testyts": "^1.5.0",
     "typescript": "5.1.6",
     "unbuild": "^1.2.1"
   },
