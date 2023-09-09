@@ -18,9 +18,25 @@ jobs:
       - run: |
           yarn install --frozen-lockfile
 
+  run-tests:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: CI
+        run: |
+          yarn install --frozen-lockfile
+
+      - name: Run tests
+        run: |
+          yarn test
+
   publish-npm:
     needs:
       - build
+      - run-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
