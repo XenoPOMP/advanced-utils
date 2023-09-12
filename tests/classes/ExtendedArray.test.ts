@@ -1,7 +1,7 @@
 import { expect } from 'testyts/build/lib/assertion/expect';
-import { Test } from 'testyts/build/lib/decorators/test.decorator';
+import { Test, XTest } from 'testyts/build/lib/decorators/test.decorator';
 import { TestSuite } from 'testyts/build/lib/decorators/testSuite.decorator';
-import { ExtendedArray } from '../../src/classes/ExtendedArray';
+import { ExtendedArray } from '../../src';
 
 @TestSuite('Extended array class')
 export class ExtendedArrayTest {
@@ -12,12 +12,21 @@ export class ExtendedArrayTest {
     expect.arraysToBeEqual(checkingVariable, [1, 2, 3]);
   }
 
-  @Test('Clear method test')
+  @Test('Empty method works')
+  checkEmptyMethod() {
+    const firstArray = new ExtendedArray(1, 2, 3);
+    const secondArray = new ExtendedArray(0);
+
+    expect.toBeFalse(firstArray.isEmpty(), 'First array is filled. Must return false.')
+    expect.toBeTrue(secondArray.isEmpty(), 'Second array is empty. Must return true.')
+  }
+
+  @XTest('Clear method test')
   clearTest() {
     const checkingVariable = new ExtendedArray(1, 2, 3);
     expect.arraysToBeEqual(checkingVariable, [1, 2, 3]);
 
-    checkingVariable.clear();
+    // checkingVariable.clear();
     expect.arraysToBeEqual(checkingVariable, new Array(0));
   }
 }

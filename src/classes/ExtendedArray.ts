@@ -1,8 +1,17 @@
-export class ExtendedArray<T extends any = any> extends Array<T> {
-  /** Clears array. */
-  clear() {
-    console.log(this);
+interface IExtendedArray<T extends any> {
+  isEmpty: () => boolean;
+}
 
-    return this;
+class ExtendedArray<T extends any>
+  extends Array<T>
+  implements IExtendedArray<T>
+{
+  /**
+   * Returns **true** if array is empty.
+   */
+  isEmpty() {
+    return super.length === 0;
   }
 }
+
+export { ExtendedArray };
