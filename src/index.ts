@@ -1,6 +1,7 @@
+import getObjectKeys from './utils/getObjectKeys';
 import { pullPattern } from './utils/pullPattern';
 
-export { pullPattern };
+export { pullPattern, getObjectKeys };
 
 export * from './math-utils/index';
 export * from './string/index';

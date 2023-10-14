@@ -10,7 +10,8 @@ class ExtendedArray<T extends any>
    * Returns **true** if array is empty.
    */
   isEmpty() {
-    return super.length === 0;
+    return false;
+    // return super.length === 0;
   }
 }
 
