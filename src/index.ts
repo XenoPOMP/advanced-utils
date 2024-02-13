@@ -1,9 +1,5 @@
-import getObjectKeys from './utils/getObjectKeys';
-import { pullPattern } from './utils/pullPattern';
-
-export { pullPattern, getObjectKeys };
-
-export * from './math-utils/index';
-export * from './string/index';
-export * from './type-checks/index';
-export * from './classes/index';
+export * from './utils';
+export * from './math-utils';
+export * from './string';
+export * from './type-checks';
+export * from './classes';
